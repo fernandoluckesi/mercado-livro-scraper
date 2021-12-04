@@ -10,7 +10,7 @@ def insert_books(data):
   try:
     client = MongoClient(DB_HOST, 27017)
     print("Connected successfully!!!")
-    db = client.mercadoLivro
+    db = client.mercado_livro
     db.books.insert_many(data)
     client.close()
   except:
@@ -21,7 +21,7 @@ def insert_categories(data):
   try:
     client = MongoClient(DB_HOST, 27017)
     print("Connected successfully!!!")
-    db = client.mercadoLivro
+    db = client.mercado_livro
     db.categories.insert_many(data)
     client.close()
   except:

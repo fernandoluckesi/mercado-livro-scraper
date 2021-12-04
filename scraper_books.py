@@ -66,6 +66,3 @@ def scraper_books():
 
     database_connect.insert_books(get_book_details(category_url, category_value))
     print(f"categoria: {category_name} inserida no banco")
-
-
-scraper_books()

@@ -30,8 +30,4 @@ def get_categories():
     categories_array_dict.append(dict_category)
 
   return categories_array_dict
-
-
-if __name__ == "__main__":
-    database_connect.insert_categories(get_categories())
     
