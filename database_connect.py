@@ -6,21 +6,26 @@ DB_HOST = "localhost"
 DB_PORT = "27017"
 
 
-try:
-   client = MongoClient(DB_HOST, 27017)
-   print("Connected successfully!!!")
-except:
-  print("Could not connect to MongoDB")
-
-
-def insert_data(data):
-    db = client.testeDb
-    try:
-      db.books.insert_many(data)
-      print("Data entered successfully")
-    except:
-      print("Data not entered")
+def insert_books(data):
+  try:
+    client = MongoClient(DB_HOST, 27017)
+    print("Connected successfully!!!")
+    db = client.mercadoLivro
+    db.books.insert_many(data)
     client.close()
+  except:
+    print("Could not connect to MongoDB")
+
+
+def insert_categories(data):
+  try:
+    client = MongoClient(DB_HOST, 27017)
+    print("Connected successfully!!!")
+    db = client.mercadoLivro
+    db.categories.insert_many(data)
+    client.close()
+  except:
+    print("Could not connect to MongoDB")
 
 
 if __name__ == "__main__":
